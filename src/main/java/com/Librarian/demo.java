@@ -1,4 +1,4 @@
-package Librarian;
+package com.Librarian;
 
 
 import org.springframework.stereotype.Controller;
@@ -10,6 +10,6 @@ public class demo {
 
     @RequestMapping("/index")
     public String index(){
-        return "Hello world";
+        return "index";
     }
 }

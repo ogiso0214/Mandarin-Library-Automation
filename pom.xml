@@ -3,20 +3,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>sdemo</groupId>
-  <artifactId>sdemo</artifactId>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.2.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>web</groupId>
+  <artifactId>Mandarin_Library_Automation</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>sdemo Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+<!--  <name>sdemo Maven Webapp</name>-->
+<!--  &lt;!&ndash; FIXME change it to the project's website &ndash;&gt;-->
+<!--  <url>http://www.example.com</url>-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <!-- 定义公共资源版本 -->
+<!--    <parent>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--      <version>2.0.1.RELEASE</version>-->
+<!--      <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+<!--    </parent>-->
+<!--    <properties>-->
+<!--      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+<!--      <java.version>1.8</java.version>-->
+<!--    </properties>-->
   </properties>
 
   <dependencies>
@@ -26,7 +43,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
     <!-- springframework 的相关依赖 start -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
@@ -40,9 +56,73 @@
       <artifactId>spring-beans</artifactId>
       <version>4.3.14.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+    <!-- 省的每次要登陆
+       <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>-->
+    <!-- 模板引擎 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- 热部署 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- 数据源 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+<!--      <dependency>-->
+<!--          <groupId>org.springframework.boot</groupId>-->
+<!--          <artifactId>spring-boot-starter-web</artifactId>-->
+<!--      </dependency>-->
+
+
+<!--      <dependency>-->
+<!--          <groupId>org.springframework.boot</groupId>-->
+<!--          <artifactId>spring-boot-starter-test</artifactId>-->
+<!--          <scope>test</scope>-->
+<!--      </dependency>-->
+
+<!--      <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-devtools</artifactId>-->
+<!--      <optional>true</optional>-->
+<!--      <scope>true</scope>-->
+<!--    </dependency>-->
+
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.3.14.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.Springframework</groupId>
       <artifactId>spring-core</artifactId>
       <version>4.3.14.RELEASE</version>
     </dependency>
@@ -95,10 +175,13 @@
   </dependencies>
 
   <build>
-    <finalName>sdemo</finalName>
+    <finalName>Mandarin_Library_Automation</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
         <!--创建项目自带的 start-->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
